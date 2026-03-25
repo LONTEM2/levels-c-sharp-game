@@ -1,0 +1,148 @@
+[gd_scene load_steps=8 format=3 uid="uid://cl102ldlabhrv"]
+
+[ext_resource type="Script" path="res://scripts/MainMenu.cs" id="1_glbx2"]
+[ext_resource type="Texture2D" uid="uid://bow5c62hkd5qf" path="res://assets/background.png" id="2_5in4l"]
+[ext_resource type="FontFile" uid="uid://cmq3cp8gtx7g" path="res://assets/Font/Planes_ValMore.ttf" id="3_66gm4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jgxue"]
+bg_color = Color(0, 0.286759, 0.182381, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wx68y"]
+bg_color = Color(0.585447, 0.916546, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bdj6y"]
+bg_color = Color(3.94672e-06, 0.670726, 0.36261, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7l7ge"]
+bg_color = Color(1.92523e-06, 0.569886, 0.276919, 1)
+
+[node name="menu" type="Control" node_paths=PackedStringArray("lvl2Button")]
+texture_repeat = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -12.4
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_glbx2")
+lvl2Button = NodePath("HBoxContainer/lvl2")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2752.0
+offset_bottom = 1536.0
+scale = Vector2(0.425, 0.425)
+texture = ExtResource("2_5in4l")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 357.0
+offset_top = 357.0
+offset_right = 815.255
+offset_bottom = 397.0
+scale = Vector2(0.975, 0.975)
+theme_override_constants/separation = 5
+
+[node name="lvl1" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_66gm4")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jgxue")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wx68y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bdj6y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7l7ge")
+text = "Lvl 1 "
+
+[node name="lvl2" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_66gm4")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jgxue")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wx68y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bdj6y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7l7ge")
+text = "Lvl 2 "
+
+[node name="lvl3" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_66gm4")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jgxue")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wx68y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bdj6y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7l7ge")
+text = "c.soon"
+
+[node name="lvl4" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_66gm4")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jgxue")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wx68y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bdj6y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7l7ge")
+text = "c.soon"
+
+[node name="lvl5" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_66gm4")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jgxue")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wx68y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bdj6y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7l7ge")
+text = "c.soon"
+
+[node name="lvl6" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_66gm4")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jgxue")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wx68y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bdj6y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7l7ge")
+text = "c.soon"
+
+[node name="lvl7" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_66gm4")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jgxue")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wx68y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bdj6y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7l7ge")
+text = "c.soon"
+
+[node name="lvl8" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_66gm4")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jgxue")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wx68y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bdj6y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7l7ge")
+text = "c.soon"
+
+[node name="lvl9" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_66gm4")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jgxue")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wx68y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bdj6y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7l7ge")
+text = "c.soon"
+
+[node name="lvl10" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_66gm4")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jgxue")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wx68y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bdj6y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7l7ge")
+text = "c.soon"
+
+[connection signal="pressed" from="HBoxContainer/lvl1" to="." method="_on_lvl_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/lvl2" to="." method="_on_lvl_2_pressed"]
