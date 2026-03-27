@@ -3,6 +3,7 @@ using Godot;
 public partial class MainMenu : Node
 {
 	[Export] public Button lvl2Button;
+	[Export] public Button lvl3Button;
 
 	public override void _Ready()
 	{
@@ -15,6 +16,10 @@ public partial class MainMenu : Node
 		{
 			lvl2Button.Disabled = !progress.IsLvl2Unlocked;
 		}
+		if (lvl3Button != null)
+		{
+			lvl3Button.Disabled = !progress.IsLvl3Unlocked;
+		}
 	}
 
 	public void _on_lvl_1_pressed()
@@ -25,5 +30,9 @@ public partial class MainMenu : Node
 	public void _on_lvl_2_pressed()
 	{
 		GetTree().ChangeSceneToFile("res://scenes/lvl_2.tscn");
+	}
+	public void _on_lvl_3_pressed()
+	{
+		GetTree().ChangeSceneToFile("res://scenes/lvl_3.tscn");
 	}
 }

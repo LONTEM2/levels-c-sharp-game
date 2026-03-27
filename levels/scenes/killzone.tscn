@@ -10,4 +10,4 @@ script = ExtResource("1_i34ty")
 wait_time = 0.6
 one_shot = true
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered_kz"]

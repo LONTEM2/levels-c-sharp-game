@@ -4,6 +4,7 @@ public partial class ProgressManager : Node
 {
 	// Zmienna trzymająca informację o odblokowanych poziomach
 	public bool IsLvl2Unlocked = true;
+	public bool IsLvl3Unlocked = true;
 
 	// Możesz tu dodać logikę zapisu do pliku w przyszłości
 	private string savePath = "user://savegame.save";
@@ -12,6 +13,7 @@ public void SaveProgress()
 {
 	using var file = FileAccess.Open(savePath, FileAccess.ModeFlags.Write);
 	file.StoreLine(IsLvl2Unlocked.ToString().ToLower());
+	file.StoreLine(IsLvl3Unlocked.ToString().ToLower());
 }
 
 public void LoadProgress()
@@ -21,6 +23,7 @@ public void LoadProgress()
 		using var file = FileAccess.Open(savePath, FileAccess.ModeFlags.Read);
 		string content = file.GetLine();
 		IsLvl2Unlocked = content == "";
+		IsLvl3Unlocked = content == "";
 	}
 }
 

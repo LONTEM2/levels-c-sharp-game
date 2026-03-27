@@ -72,7 +72,8 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_jgxue")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wx68y")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_bdj6y")
 theme_override_styles/normal = SubResource("StyleBoxFlat_7l7ge")
-text = "c.soon"
+disabled = true
+text = "lvl3"
 
 [node name="lvl4" type="Button" parent="HBoxContainer"]
 layout_mode = 2
@@ -146,3 +147,4 @@ text = "c.soon"
 
 [connection signal="pressed" from="HBoxContainer/lvl1" to="." method="_on_lvl_1_pressed"]
 [connection signal="pressed" from="HBoxContainer/lvl2" to="." method="_on_lvl_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/lvl3" to="." method="_on_lvl_3_pressed"]

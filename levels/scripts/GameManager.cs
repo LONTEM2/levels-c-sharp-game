@@ -17,6 +17,7 @@ public partial class GameManager : Node
 		GD.Print("Osiągnięto 5 monet! Ukonczono lvl1...");
 		var progress = GetNode<ProgressManager>("/root/ProgressManager");
 		progress.IsLvl2Unlocked = true;
+		progress.IsLvl3Unlocked = true;
 		GetTree().ChangeSceneToFile("res://scenes/menu.tscn");
 		}
 	}
