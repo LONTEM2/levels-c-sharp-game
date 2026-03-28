@@ -1929,6 +1929,11 @@ scoreLabel = NodePath("CanvasLayer/ScoreLabel")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="GameManager"]
 
+[node name="Panel" type="Panel" parent="GameManager/CanvasLayer"]
+offset_left = 1025.0
+offset_right = 1151.0
+offset_bottom = 40.0
+
 [node name="ScoreLabel" type="Label" parent="GameManager/CanvasLayer"]
 anchors_preset = 1
 anchor_left = 1.0

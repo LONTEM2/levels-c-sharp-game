@@ -15,11 +15,18 @@ public partial class Coin : Area2D
 	}
 
 	public void _on_body_entered(Node2D body)
+{
+	// 1. Najpierw usuwamy monetę z ekranu
+	QueueFree(); 
+	
+	// 2. Potem próbujemy dodać punkt
+	if (_gameManager != null)
 	{
-		GD.Print("+1 coin!");
-		// Wywołujemy metodę, którą stworzyliśmy wcześniej
 		_gameManager.AddPoint();
-		// Usuwamy monetę
-		QueueFree();
 	}
+	else 
+	{
+		GD.PrintErr("BŁĄD: Moneta nie widzi GameManagera!");
+	}
+}
 }

@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://bym2unden11if"]
+
+[ext_resource type="Script" path="res://scripts/GameManager.cs" id="1_fd3or"]
+[ext_resource type="FontFile" uid="uid://cmq3cp8gtx7g" path="res://assets/Font/Planes_ValMore.ttf" id="2_1g6tc"]
+
+[node name="lvl_4" type="Node2D"]
+
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("scoreLabel")]
+unique_name_in_owner = true
+script = ExtResource("1_fd3or")
+scoreLabel = NodePath("CanvasLayer/ScoreLabel")
+currentLevelNum = 4
+
+[node name="CanvasLayer" type="CanvasLayer" parent="GameManager"]
+
+[node name="Panel" type="Panel" parent="GameManager/CanvasLayer"]
+offset_left = 1025.0
+offset_right = 1151.0
+offset_bottom = 40.0
+
+[node name="ScoreLabel" type="Label" parent="GameManager/CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 449.0
+offset_top = -319.5
+offset_right = 575.0
+offset_bottom = -288.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 10
+size_flags_vertical = 2
+theme_override_fonts/font = ExtResource("2_1g6tc")
+theme_override_font_sizes/font_size = 30
+text = "0 Coins."
+horizontal_alignment = 2
+autowrap_mode = 3

@@ -10,7 +10,7 @@ public partial class Killzone : Area2D
 		_timer = GetNode<Timer>("Timer");
 	}
 
-	public void _on_body_entered(Node2D body)
+	public void _on_body_entered_kz(Node2D body)
 	{
 		GD.Print("You Died!");	
 		Engine.TimeScale = 0.5;
