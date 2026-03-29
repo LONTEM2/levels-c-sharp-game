@@ -3,7 +3,10 @@ using System;
 
 public partial class Slime : Node2D
 {
-	private const float Speed = 60.0f;
+	// Zamieniamy 'const' na '[Export]'. 
+	// Teraz zobaczysz suwak/pole w Inspektorze Godota.
+	[Export] public float Speed = 60.0f; 
+
 	private int _direction = 1;
 
 	private RayCast2D _rayCastRight;
@@ -23,9 +26,12 @@ public partial class Slime : Node2D
 		if (_rayCastRight.IsColliding())
 		{
 			var collider = _rayCastRight.GetCollider();
+<<<<<<< Updated upstream
 			// Jeśli to, co wykryliśmy, NIE jest Graczem (zakładając, że Gracz to np. CharacterBody2D)
 			// Możesz tu sprawdzić nazwę: collider.GetName() == "Player" 
 			// Albo klasę, jak poniżej:
+=======
+>>>>>>> Stashed changes
 			if (!(collider is CharacterBody2D)) 
 			{
 				_direction = -1;
@@ -45,6 +51,7 @@ public partial class Slime : Node2D
 		}
 
 		Vector2 currentPos = Position;
+		// Używamy zmiennej Speed zamiast stałej
 		currentPos.X += (float)(_direction * Speed * delta);
 		Position = currentPos;
 	}

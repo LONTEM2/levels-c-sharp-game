@@ -1,10 +1,21 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=10 format=3 uid="uid://b3uh1ca23li5d"]
+=======
+[gd_scene load_steps=17 format=3 uid="uid://b3uh1ca23li5d"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" path="res://scripts/PlayMenu.cs" id="1_a7d2r"]
 [ext_resource type="FontFile" uid="uid://cdjehypwgqef7" path="res://assets/menu/fonts/JosefinSans-Bold.ttf" id="2_rca0t"]
 [ext_resource type="Texture2D" uid="uid://hfntd0xuvmx" path="res://assets/menu/asset/png@2x/Buttons/Rect-Medium/PlayText/Hover@2x.png" id="3_gqst5"]
 [ext_resource type="Texture2D" uid="uid://b6b551wkmkfc7" path="res://assets/menu/asset/png@2x/Buttons/Rect-Medium/PlayText/Default@2x.png" id="4_ixm08"]
+<<<<<<< Updated upstream
 [ext_resource type="Script" path="res://scripts/MyPlayButton.cs" id="6_gggd6"]
+=======
+[ext_resource type="Texture2D" uid="uid://cl8da163xh1fa" path="res://assets/menu/asset/png@2x/Level/Button/Locked/Hover@2x.png" id="6_dsbtm"]
+[ext_resource type="Script" path="res://scripts/MyPlayButton.cs" id="6_gggd6"]
+[ext_resource type="Texture2D" uid="uid://dgp71oeeiaike" path="res://assets/menu/asset/png@2x/Buttons/Square-Medium/Repeat/Hover@2x.png" id="7_j4xvg"]
+[ext_resource type="Texture2D" uid="uid://d26gfveny2hc2" path="res://assets/menu/asset/png@2x/Buttons/Square-Medium/Repeat/Default@2x.png" id="8_oqpbu"]
+>>>>>>> Stashed changes
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hxj2s"]
 texture = ExtResource("3_gqst5")
@@ -18,6 +29,21 @@ texture = ExtResource("3_gqst5")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1rse1"]
 texture = ExtResource("4_ixm08")
 
+<<<<<<< Updated upstream
+=======
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eni4r"]
+texture = ExtResource("6_dsbtm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a1jgp"]
+texture = ExtResource("7_j4xvg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w3pf0"]
+texture = ExtResource("7_j4xvg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u0bbg"]
+texture = ExtResource("8_oqpbu")
+
+>>>>>>> Stashed changes
 [node name="PlayMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -46,26 +72,66 @@ text = "LEVELS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+<<<<<<< Updated upstream
 [node name="Button" type="Button" parent="."]
 custom_minimum_size = Vector2(80, 40)
+=======
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+>>>>>>> Stashed changes
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+<<<<<<< Updated upstream
 offset_left = -50.0
 offset_top = -82.0
 offset_right = 50.0
 offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 2
+=======
+offset_left = -40.0
+offset_top = -26.0
+offset_right = 40.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+>>>>>>> Stashed changes
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_hxj2s")
 theme_override_styles/hover = SubResource("StyleBoxTexture_t34rp")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_yg0r7")
 theme_override_styles/normal = SubResource("StyleBoxTexture_1rse1")
 script = ExtResource("6_gggd6")
 
+<<<<<<< Updated upstream
 [connection signal="mouse_entered" from="Button" to="." method="OnMouseEntered"]
 [connection signal="mouse_exited" from="Button" to="." method="OnMouseExited"]
 [connection signal="pressed" from="Button" to="." method="_on_play_button_pressed"]
+=======
+[node name="Settings" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("2_rca0t")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_eni4r")
+theme_override_styles/hover = SubResource("StyleBoxTexture_a1jgp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_w3pf0")
+theme_override_styles/normal = SubResource("StyleBoxTexture_u0bbg")
+text = "
+"
+
+[node name="ConfirmResetDialog" type="ConfirmationDialog" parent="."]
+ok_button_text = "Yes, delete"
+dialog_text = "Are you sure you want to delete all game progress? This operation cannot be undone."
+
+[connection signal="mouse_entered" from="VBoxContainer/Play" to="." method="OnMouseEntered"]
+[connection signal="mouse_exited" from="VBoxContainer/Play" to="." method="OnMouseExited"]
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+>>>>>>> Stashed changes

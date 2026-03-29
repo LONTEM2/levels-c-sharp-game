@@ -49,6 +49,32 @@ public void LoadProgress()
 	}
 }
 
+public void ClearSave()
+{
+	// 1. Resetujemy wszystkie zmienne w pamięci do false
+	IsLvl2Unlocked = false;
+	IsLvl3Unlocked = false;
+	IsLvl4Unlocked = false;
+	IsLvl5Unlocked = false;
+	IsLvl6Unlocked = false;
+	IsLvl7Unlocked = false;
+	IsLvl8Unlocked = false;
+	IsLvl9Unlocked = false;
+	IsLvl10Unlocked = false;
+
+	// 2. Usuwamy plik zapisu z dysku (jeśli istnieje)
+	if (FileAccess.FileExists(savePath))
+	{
+		DirAccess.RemoveAbsolute(savePath);
+		GD.Print("Plik zapisu został usunięty.");
+	}
+
+	// 3. Opcjonalnie zapisujemy "pusty" stan, aby upewnić się, że plik jest czysty
+	SaveProgress();
+	
+	GD.Print("Postęp gry został zresetowany!");
+}
+
 public override void _Ready()
 {
 	//DirAccess.RemoveAbsolute(savePath); //it clears save system

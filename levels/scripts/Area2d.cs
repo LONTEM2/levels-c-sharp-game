@@ -3,7 +3,11 @@ using System;
 
 public partial class Area2d : Area2D
 {
+<<<<<<< Updated upstream
 	[Export] public NodePath MonetaPath = "../Coin5";
+=======
+	[Export] public NodePath MonetaPath = "";
+>>>>>>> Stashed changes
 	[Export] public Vector2 TeleportTarget = new Vector2(725, -50);
 
 	// Ta funkcja musi być PUBLICZNA
