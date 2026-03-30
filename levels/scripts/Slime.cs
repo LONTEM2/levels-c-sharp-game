@@ -27,9 +27,12 @@ public partial class Slime : Node2D
 		{
 			var collider = _rayCastRight.GetCollider();
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			// Jeśli to, co wykryliśmy, NIE jest Graczem (zakładając, że Gracz to np. CharacterBody2D)
 			// Możesz tu sprawdzić nazwę: collider.GetName() == "Player" 
 			// Albo klasę, jak poniżej:
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 			if (!(collider is CharacterBody2D)) 

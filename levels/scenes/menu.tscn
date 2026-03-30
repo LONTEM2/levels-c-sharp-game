@@ -85,6 +85,12 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_cdi3w")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_mtw7c")
 theme_override_styles/normal = SubResource("StyleBoxTexture_3hx4l")
 text = "1"
+<<<<<<< Updated upstream
+=======
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+>>>>>>> Stashed changes
 
 [node name="lvl2" type="Button" parent="VBoxContainer/HBoxContainer"]
 clip_contents = true

@@ -1966,7 +1966,13 @@ unique_name_in_owner = true
 script = ExtResource("1_c0u43")
 scoreLabel = NodePath("CanvasLayer/ScoreLabel")
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 currentLevelNum = 2
+=======
+timeLabel = NodePath("CanvasLayer/TimeLabel")
+currentLevelNum = 2
+timeLimit = 90.0
+>>>>>>> Stashed changes
 =======
 timeLabel = NodePath("CanvasLayer/TimeLabel")
 currentLevelNum = 2

@@ -4,7 +4,10 @@ using System;
 public partial class PlayMenu : Control
 {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 	private ConfirmationDialog _confirmDialog;
 
 	public override void _Ready()
@@ -16,14 +19,20 @@ public partial class PlayMenu : Control
 		_confirmDialog.Confirmed += OnResetConfirmed;
 	}
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 	public void _on_play_button_pressed()
 	{
 		GetTree().ChangeSceneToFile("res://scenes/menu.tscn");
 	}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	
 =======
+=======
+>>>>>>> Stashed changes
 
 	// Funkcja podpięta pod przycisk Resetu/Ustawień w menu
 	public void _on_settings_pressed()
@@ -45,5 +54,8 @@ public partial class PlayMenu : Control
 			GetTree().ReloadCurrentScene();
 		}
 	}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }

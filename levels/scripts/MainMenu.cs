@@ -80,9 +80,17 @@ public partial class MainMenu : Node
 	}
 	public void _on_lvl_5_pressed()
 	{
+<<<<<<< Updated upstream
 	}
 	public void _on_lvl_6_pressed()
 	{
+=======
+		GetTree().ChangeSceneToFile("res://loading_screen.tscn");
+	}
+	public void _on_lvl_6_pressed()
+	{
+		GetTree().ChangeSceneToFile("res://scenes/demoEnd.tscn");
+>>>>>>> Stashed changes
 	}
 	public void _on_lvl_7_pressed()
 	{

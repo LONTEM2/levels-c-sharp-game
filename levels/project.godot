@@ -10,10 +10,14 @@ config_version=5
 
 [application]
 
+<<<<<<< Updated upstream
 config/name="levels"
+=======
+config/name="levels v0.3.1 Alpha"
+>>>>>>> Stashed changes
 run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://icon.png"
 
 [autoload]
 

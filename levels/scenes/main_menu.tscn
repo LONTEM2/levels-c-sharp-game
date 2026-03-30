@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene load_steps=10 format=3 uid="uid://b3uh1ca23li5d"]
+=======
+[gd_scene load_steps=17 format=3 uid="uid://b3uh1ca23li5d"]
+>>>>>>> Stashed changes
 =======
 [gd_scene load_steps=17 format=3 uid="uid://b3uh1ca23li5d"]
 >>>>>>> Stashed changes
@@ -9,12 +13,18 @@
 [ext_resource type="Texture2D" uid="uid://hfntd0xuvmx" path="res://assets/menu/asset/png@2x/Buttons/Rect-Medium/PlayText/Hover@2x.png" id="3_gqst5"]
 [ext_resource type="Texture2D" uid="uid://b6b551wkmkfc7" path="res://assets/menu/asset/png@2x/Buttons/Rect-Medium/PlayText/Default@2x.png" id="4_ixm08"]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [ext_resource type="Script" path="res://scripts/MyPlayButton.cs" id="6_gggd6"]
 =======
+=======
+>>>>>>> Stashed changes
 [ext_resource type="Texture2D" uid="uid://cl8da163xh1fa" path="res://assets/menu/asset/png@2x/Level/Button/Locked/Hover@2x.png" id="6_dsbtm"]
 [ext_resource type="Script" path="res://scripts/MyPlayButton.cs" id="6_gggd6"]
 [ext_resource type="Texture2D" uid="uid://dgp71oeeiaike" path="res://assets/menu/asset/png@2x/Buttons/Square-Medium/Repeat/Hover@2x.png" id="7_j4xvg"]
 [ext_resource type="Texture2D" uid="uid://d26gfveny2hc2" path="res://assets/menu/asset/png@2x/Buttons/Square-Medium/Repeat/Default@2x.png" id="8_oqpbu"]
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hxj2s"]
@@ -30,7 +40,10 @@ texture = ExtResource("3_gqst5")
 texture = ExtResource("4_ixm08")
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eni4r"]
 texture = ExtResource("6_dsbtm")
 
@@ -43,6 +56,9 @@ texture = ExtResource("7_j4xvg")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u0bbg"]
 texture = ExtResource("8_oqpbu")
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 [node name="PlayMenu" type="Control"]
 layout_mode = 3
@@ -55,7 +71,11 @@ script = ExtResource("1_a7d2r")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
+<<<<<<< Updated upstream
 offset_right = 1150.0
+=======
+offset_right = 1163.0
+>>>>>>> Stashed changes
 offset_bottom = 648.0
 color = Color(0.156863, 0.176471, 0.211765, 1)
 
@@ -73,8 +93,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [node name="Button" type="Button" parent="."]
 custom_minimum_size = Vector2(80, 40)
+=======
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+>>>>>>> Stashed changes
 =======
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 >>>>>>> Stashed changes
@@ -85,6 +109,7 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 offset_left = -50.0
 offset_top = -82.0
 offset_right = 50.0
@@ -92,6 +117,8 @@ offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 2
 =======
+=======
+>>>>>>> Stashed changes
 offset_left = -40.0
 offset_top = -26.0
 offset_right = 40.0
@@ -102,6 +129,9 @@ grow_vertical = 2
 [node name="Play" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_hxj2s")
 theme_override_styles/hover = SubResource("StyleBoxTexture_t34rp")
@@ -110,12 +140,17 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_1rse1")
 script = ExtResource("6_gggd6")
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [connection signal="mouse_entered" from="Button" to="." method="OnMouseEntered"]
 [connection signal="mouse_exited" from="Button" to="." method="OnMouseExited"]
 [connection signal="pressed" from="Button" to="." method="_on_play_button_pressed"]
 =======
 [node name="Settings" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(80, 80)
+=======
+[node name="Settings" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(60, 100)
+>>>>>>> Stashed changes
 layout_mode = 2
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("2_rca0t")
@@ -130,8 +165,30 @@ text = "
 ok_button_text = "Yes, delete"
 dialog_text = "Are you sure you want to delete all game progress? This operation cannot be undone."
 
+<<<<<<< Updated upstream
+=======
+[node name="Version" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_rca0t")
+theme_override_font_sizes/font_size = 25
+text = "v0.3.1 Alpha"
+metadata/_edit_use_anchors_ = true
+
+>>>>>>> Stashed changes
 [connection signal="mouse_entered" from="VBoxContainer/Play" to="." method="OnMouseEntered"]
 [connection signal="mouse_exited" from="VBoxContainer/Play" to="." method="OnMouseExited"]
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

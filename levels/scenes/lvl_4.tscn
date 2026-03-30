@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene load_steps=3 format=3 uid="uid://bym2unden11if"]
 
 [ext_resource type="Script" path="res://scripts/GameManager.cs" id="1_fd3or"]
@@ -12,6 +13,8 @@ script = ExtResource("1_fd3or")
 scoreLabel = NodePath("CanvasLayer/ScoreLabel")
 currentLevelNum = 4
 =======
+=======
+>>>>>>> Stashed changes
 [gd_scene load_steps=41 format=4 uid="uid://bym2unden11if"]
 
 [ext_resource type="Script" path="res://scripts/GameManager.cs" id="1_fd3or"]
@@ -29,7 +32,11 @@ currentLevelNum = 4
 [ext_resource type="Texture2D" uid="uid://el8pykbpepvv" path="res://assets/tilesets/v.png" id="11_6meww"]
 [ext_resource type="Texture2D" uid="uid://b5duwn1me8kuv" path="res://assets/tilesets/tp2.png" id="14_gqslw"]
 
+<<<<<<< Updated upstream
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xpnsu"]
+=======
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yqfx3"]
+>>>>>>> Stashed changes
 texture = ExtResource("4_d2uh5")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -195,9 +202,15 @@ texture = ExtResource("4_d2uh5")
 
 [sub_resource type="TileSet" id="TileSet_gp17q"]
 physics_layer_0/collision_layer = 1
+<<<<<<< Updated upstream
 sources/1 = SubResource("TileSetAtlasSource_xpnsu")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q40gk"]
+=======
+sources/1 = SubResource("TileSetAtlasSource_yqfx3")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5kcms"]
+>>>>>>> Stashed changes
 texture = ExtResource("4_d2uh5")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -369,7 +382,11 @@ texture = ExtResource("4_d2uh5")
 physics_layer_0/collision_layer = 1
 physics_layer_1/collision_layer = 4
 physics_layer_1/collision_mask = 4
+<<<<<<< Updated upstream
 sources/0 = SubResource("TileSetAtlasSource_q40gk")
+=======
+sources/0 = SubResource("TileSetAtlasSource_5kcms")
+>>>>>>> Stashed changes
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2p4al"]
 distance = -104.0
@@ -377,6 +394,24 @@ distance = -104.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j5g8j"]
 size = Vector2(177, 27)
 
+<<<<<<< Updated upstream
+=======
+[sub_resource type="Animation" id="Animation_b4s20"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.47, 0.47, 0.27451)]
+}
+
+>>>>>>> Stashed changes
 [sub_resource type="Animation" id="Animation_unoq2"]
 resource_name = "light"
 length = 3.0
@@ -394,6 +429,7 @@ tracks/0/keys = {
 "values": [Color(1, 0.47, 0.47, 0.27451), Color(1, 0.47, 0.47, 0.627451), Color(1, 0.47, 0.47, 0.27451)]
 }
 
+<<<<<<< Updated upstream
 [sub_resource type="Animation" id="Animation_b4s20"]
 length = 0.001
 tracks/0/type = "value"
@@ -409,6 +445,8 @@ tracks/0/keys = {
 "values": [Color(1, 0.47, 0.47, 0.27451)]
 }
 
+=======
+>>>>>>> Stashed changes
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v3fdm"]
 _data = {
 "RESET": SubResource("Animation_b4s20"),
@@ -419,6 +457,10 @@ _data = {
 size = Vector2(32, 31)
 
 [sub_resource type="Animation" id="Animation_20rug"]
+<<<<<<< Updated upstream
+=======
+length = 3.0
+>>>>>>> Stashed changes
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -427,10 +469,17 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+<<<<<<< Updated upstream
 "times": PackedFloat32Array(0, 0.266667, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(78, -9), Vector2(78, -9), Vector2(78, -57)]
+=======
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-194, 343), Vector2(-194, 343), Vector2(-194, 294), Vector2(-194, 294)]
+>>>>>>> Stashed changes
 }
 
 [sub_resource type="Animation" id="Animation_0hr6g"]
@@ -531,6 +580,24 @@ _data = {
 "move": SubResource("Animation_tlo3k")
 }
 
+<<<<<<< Updated upstream
+=======
+[sub_resource type="Animation" id="Animation_paars"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(509, -54)]
+}
+
+>>>>>>> Stashed changes
 [sub_resource type="Animation" id="Animation_5vmad"]
 resource_name = "move"
 length = 10.0
@@ -548,6 +615,7 @@ tracks/0/keys = {
 "values": [Vector2(509, -54), Vector2(509, -54), Vector2(509, -201), Vector2(509, -201), Vector2(14, -201), Vector2(14, -201)]
 }
 
+<<<<<<< Updated upstream
 [sub_resource type="Animation" id="Animation_paars"]
 length = 0.001
 tracks/0/type = "value"
@@ -563,13 +631,19 @@ tracks/0/keys = {
 "values": [Vector2(509, -54)]
 }
 
+=======
+>>>>>>> Stashed changes
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j5a7o"]
 _data = {
 "RESET": SubResource("Animation_paars"),
 "move": SubResource("Animation_5vmad")
 }
 
+<<<<<<< Updated upstream
 [sub_resource type="Animation" id="Animation_a06m1"]
+=======
+[sub_resource type="Animation" id="Animation_sbung"]
+>>>>>>> Stashed changes
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -584,7 +658,11 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
+<<<<<<< Updated upstream
 [sub_resource type="Animation" id="Animation_ikuca"]
+=======
+[sub_resource type="Animation" id="Animation_2iwu2"]
+>>>>>>> Stashed changes
 resource_name = "light"
 loop_mode = 1
 tracks/0/type = "value"
@@ -600,10 +678,17 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 0.686275, 1), Color(1, 1, 1, 1)]
 }
 
+<<<<<<< Updated upstream
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fhljj"]
 _data = {
 "RESET": SubResource("Animation_a06m1"),
 "light": SubResource("Animation_ikuca")
+=======
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_15ecm"]
+_data = {
+"RESET": SubResource("Animation_sbung"),
+"light": SubResource("Animation_2iwu2")
+>>>>>>> Stashed changes
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d14cl"]
@@ -618,6 +703,9 @@ scoreLabel = NodePath("CanvasLayer/ScoreLabel")
 timeLabel = NodePath("CanvasLayer/TimeLabel")
 currentLevelNum = 4
 timeLimit = 150.0
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 [node name="CanvasLayer" type="CanvasLayer" parent="GameManager"]
@@ -643,11 +731,14 @@ size_flags_horizontal = 10
 size_flags_vertical = 2
 theme_override_fonts/font = ExtResource("2_1g6tc")
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 theme_override_font_sizes/font_size = 30
 text = "0 Coins."
 horizontal_alignment = 2
 autowrap_mode = 3
 =======
+=======
+>>>>>>> Stashed changes
 theme_override_font_sizes/font_size = 25
 text = "🟡 0"
 horizontal_alignment = 1
@@ -677,7 +768,11 @@ autostart = true
 light_mask = 256
 visibility_layer = 256
 position = Vector2(-3, -9)
+<<<<<<< Updated upstream
 tile_map_data = PackedByteArray("AAAFAP//AQAAAAAAAAAFAAAAAQABAAEAAAAFAAEAAQAAAAEAAAAFAAIAAQABAAAAAAAGAP//AQAAAAAAAAAGAAAAAQAAAAEAAAAGAAEAAQABAAEAAAAGAAIAAQABAAAAAAAHAP//AQAAAAEAAAAHAAAAAQABAAAAAAAHAAEAAQABAAAAAAAHAAIAAQAAAAEAAAAAAAEAAQAAAAAAAAAAAAIAAQABAAEAAAABAAEAAQAAAAAAAAABAAIAAQAAAAEAAAAMAAAAAQAAAAEAAAALAAAAAQABAAAAAAALAP//AQAAAAAAAAAMAP//AQAAAAAAAAALAPv/AQAAAAEAAAAMAPv/AQAAAAEAAAANAPv/AQABAAEAAAAOAPv/AQAAAAEAAAAPAPv/AQABAAEAAAAQAPv/AQAAAAEAAAARAPv/AQAAAAEAAAALAPr/AQABAAEAAAAMAPr/AQAAAAEAAAANAPr/AQABAAAAAAAOAPr/AQABAAAAAAAPAPr/AQAAAAEAAAAQAPr/AQAAAAEAAAARAPr/AQABAAEAAAALAPn/AQAAAAAAAAASAPn/AQAAAAAAAAASAPr/AQAAAAEAAAASAPv/AQABAAAAAAAPAP//AQAAAAAAAAAQAP//AQAAAAAAAAARAP//AQAAAAAAAAAPAAAAAQABAAEAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAEAAAAHAP7/AQAAAAAAAAAGAP7/AQABAAYAAAARAPn/AQABAAYAAAAXAP3/AQAAAAAAAAAXAP7/AQAAAAEAAAAYAP7/AQABAAEAAAAYAP3/AQAAAAAAAAAVAP7/AQAAAAAAAAAVAP//AQABAAAAAAATAPv/AQAAAAAAAAAUAPv/AQAAAAAAAAATAPj/AQAAAAMAAAATAPn/AQAAAAQAAAATAPr/AQAAAAUAAAD9/wIAAQAAAAAAAAD+/wIAAQAAAAAAAAD//wIAAQAAAAAAAAD//wMAAQABAAEAAAD+/wMAAQAAAAEAAAD9/wMAAQAAAAEAAAD/////AQAAAAMAAAD//wEAAQAAAAUAAAD//wAAAQAAAAQAAAD+/wEAAQABAAYAAAAAAAAAAQABAAUAAAD//wQAAQAAAAEAAAD+/wQAAQABAAEAAAD9/wQAAQAAAAEAAAD9/wUAAQABAAEAAAD+/wUAAQAAAAEAAAD//wUAAQAAAAEA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")
+=======
+tile_map_data = PackedByteArray("AAAFAP//AQAAAAAAAAAFAAAAAQABAAEAAAAFAAEAAQAAAAEAAAAFAAIAAQABAAAAAAAGAP//AQAAAAAAAAAGAAAAAQAAAAEAAAAGAAEAAQABAAEAAAAGAAIAAQABAAAAAAAHAP//AQAAAAEAAAAHAAAAAQABAAAAAAAHAAEAAQABAAAAAAAHAAIAAQAAAAEAAAAAAAEAAQAAAAAAAAAAAAIAAQABAAEAAAABAAEAAQAAAAAAAAABAAIAAQAAAAEAAAAMAAAAAQAAAAEAAAALAAAAAQABAAAAAAALAP//AQAAAAAAAAAMAP//AQAAAAAAAAALAPv/AQAAAAEAAAAMAPv/AQAAAAEAAAANAPv/AQABAAEAAAAOAPv/AQAAAAEAAAAPAPv/AQABAAEAAAAQAPv/AQAAAAEAAAARAPv/AQAAAAEAAAALAPr/AQABAAEAAAAMAPr/AQAAAAEAAAANAPr/AQABAAAAAAAOAPr/AQABAAAAAAAPAPr/AQAAAAEAAAAQAPr/AQAAAAEAAAARAPr/AQABAAEAAAALAPn/AQAAAAAAAAASAPn/AQAAAAAAAAASAPr/AQAAAAEAAAASAPv/AQABAAAAAAAPAP//AQAAAAAAAAAQAP//AQAAAAAAAAARAP//AQAAAAAAAAAPAAAAAQABAAEAAAAQAAAAAQAAAAEAAAARAAAAAQABAAEAAAAHAP7/AQAAAAAAAAAGAP7/AQABAAYAAAARAPn/AQABAAYAAAAXAP3/AQAAAAAAAAAXAP7/AQAAAAEAAAAYAP7/AQABAAEAAAAYAP3/AQAAAAAAAAAVAP7/AQAAAAAAAAAVAP//AQABAAAAAAATAPv/AQAAAAAAAAAUAPv/AQAAAAAAAAATAPj/AQAAAAMAAAATAPn/AQAAAAQAAAATAPr/AQAAAAUAAAD9/wIAAQAAAAAAAAD+/wIAAQAAAAAAAAD//wIAAQAAAAAAAAD//wMAAQABAAEAAAD+/wMAAQAAAAEAAAD9/wMAAQAAAAEAAAD/////AQAAAAMAAAD//wEAAQAAAAUAAAD//wAAAQAAAAQAAAD+/wEAAQABAAYAAAAAAAAAAQABAAUAAAD//wQAAQAAAAEAAAD+/wQAAQABAAEAAAD9/wQAAQAAAAEAAAD9/wUAAQABAAEAAAD+/wUAAQAAAAEAAAD//wUAAQAAAAEA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")
+>>>>>>> Stashed changes
 tile_set = SubResource("TileSet_gp17q")
 
 [node name="Background" type="TileMapLayer" parent="."]
@@ -727,7 +822,11 @@ limit_smoothed = true
 [node name="platforms" type="Node" parent="."]
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="platforms"]
+<<<<<<< Updated upstream
 position = Vector2(78, -9)
+=======
+position = Vector2(-194, 343)
+>>>>>>> Stashed changes
 
 [node name="L4" type="Sprite2D" parent="platforms/AnimatableBody2D"]
 position = Vector2(223, -0.4)
@@ -747,7 +846,11 @@ libraries = {
 autoplay = "move"
 
 [node name="AnimatableBody2D2" type="AnimatableBody2D" parent="platforms"]
+<<<<<<< Updated upstream
 position = Vector2(78, -9)
+=======
+position = Vector2(-194, 343)
+>>>>>>> Stashed changes
 
 [node name="L4" type="Sprite2D" parent="platforms/AnimatableBody2D2"]
 position = Vector2(223, -0.4)
@@ -875,7 +978,11 @@ texture = ExtResource("11_6meww")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="tps/tp/V"]
 libraries = {
+<<<<<<< Updated upstream
 "": SubResource("AnimationLibrary_fhljj")
+=======
+"": SubResource("AnimationLibrary_15ecm")
+>>>>>>> Stashed changes
 }
 autoplay = "light"
 
@@ -899,7 +1006,11 @@ region_rect = Rect2(17, 13, 128, 127)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="tps/tp2/V"]
 libraries = {
+<<<<<<< Updated upstream
 "": SubResource("AnimationLibrary_fhljj")
+=======
+"": SubResource("AnimationLibrary_15ecm")
+>>>>>>> Stashed changes
 }
 autoplay = "light"
 
@@ -922,7 +1033,11 @@ region_rect = Rect2(17, 13, 128, 127)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="tps/tp3/V"]
 libraries = {
+<<<<<<< Updated upstream
 "": SubResource("AnimationLibrary_fhljj")
+=======
+"": SubResource("AnimationLibrary_15ecm")
+>>>>>>> Stashed changes
 }
 autoplay = "light"
 
@@ -933,4 +1048,7 @@ shape = SubResource("RectangleShape2D_d14cl")
 [connection signal="body_entered" from="tps/tp" to="tps/tp" method="_on_tp_body_entered"]
 [connection signal="body_entered" from="tps/tp2" to="tps/tp2" method="_on_tp_body_entered"]
 [connection signal="body_entered" from="tps/tp3" to="tps/tp3" method="_on_tp_body_entered"]
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
