@@ -1,0 +1,82 @@
+[gd_scene load_steps=8 format=3 uid="uid://cqxyww62kbcr0"]
+
+[ext_resource type="Script" path="res://scripts/VolumeSlider.cs" id="1_1q6hr"]
+[ext_resource type="Script" path="res://scripts/MusicMenu.cs" id="1_82ijo"]
+[ext_resource type="FontFile" uid="uid://cdjehypwgqef7" path="res://assets/menu/fonts/JosefinSans-Bold.ttf" id="1_gb0cx"]
+[ext_resource type="Texture2D" uid="uid://bfbgxw1gjxwtw" path="res://assets/menu/asset/png@2x/Buttons/Square-Medium/Home/Hover@2x.png" id="3_c5xhf"]
+[ext_resource type="Texture2D" uid="uid://dh7k4r6c34i0f" path="res://assets/menu/asset/png@2x/Buttons/Square-Medium/Home/Default@2x.png" id="4_imdct"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ixof7"]
+texture = ExtResource("3_c5xhf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c61oy"]
+texture = ExtResource("4_imdct")
+
+[node name="MusicMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_82ijo")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1163.0
+offset_bottom = 648.0
+color = Color(0.156863, 0.176471, 0.211765, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -21.5
+offset_right = 100.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gb0cx")
+text = "Music"
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 10)
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 0.6
+script = ExtResource("1_1q6hr")
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gb0cx")
+text = "SFX"
+
+[node name="HSlider2" type="HSlider" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 10)
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 0.6
+script = ExtResource("1_1q6hr")
+BusName = "SFX"
+
+[node name="HomeButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -80.0
+offset_right = 80.0
+grow_vertical = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ixof7")
+theme_override_styles/normal = SubResource("StyleBoxTexture_c61oy")
+
+[connection signal="pressed" from="HomeButton" to="." method="_on_home_button_pressed"]
