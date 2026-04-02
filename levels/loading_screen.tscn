@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3mfk7vooxqyg"]
+
+[ext_resource type="Script" path="res://scripts/LoadingScreen.cs" id="1_axedo"]
+[ext_resource type="Texture2D" uid="uid://kdgwdiir2mil" path="res://assets/menu/asset/png@2x/ProgressBar/Background@2x.png" id="1_igncd"]
+[ext_resource type="Texture2D" uid="uid://cgxnlmt30cnpe" path="res://assets/menu/asset/png@2x/ProgressBar/Line@2x.png" id="2_wgnr3"]
+
+[node name="LoadingScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_axedo")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -488.0
+offset_top = -48.0
+offset_right = 488.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+step = 0.1
+texture_under = ExtResource("1_igncd")
+texture_progress = ExtResource("2_wgnr3")
+texture_progress_offset = Vector2(5, 20)
