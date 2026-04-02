@@ -1,0 +1,123 @@
+[gd_scene load_steps=16 format=3 uid="uid://b20yvj7sqp2b4"]
+
+[ext_resource type="FontFile" uid="uid://cdjehypwgqef7" path="res://assets/menu/fonts/JosefinSans-Bold.ttf" id="1_jciyd"]
+[ext_resource type="Script" path="res://scripts/PauseManager.cs" id="1_x7h7u"]
+[ext_resource type="Texture2D" uid="uid://dgp71oeeiaike" path="res://assets/menu/asset/png@2x/Buttons/Square-Medium/Repeat/Hover@2x.png" id="2_7i2ky"]
+[ext_resource type="Texture2D" uid="uid://dnbmu83keinn4" path="res://assets/menu/asset/png@3x/Panel/Window/Medium@3x.png" id="2_selul"]
+[ext_resource type="Texture2D" uid="uid://d26gfveny2hc2" path="res://assets/menu/asset/png@2x/Buttons/Square-Medium/Repeat/Default@2x.png" id="3_asdnh"]
+[ext_resource type="Texture2D" uid="uid://d1v60cyrsc0cg" path="res://assets/menu/asset/png@2x/Buttons/Square-Medium/Play/Hover@2x.png" id="4_xryuc"]
+[ext_resource type="Texture2D" uid="uid://cdjhem3wweb2s" path="res://assets/menu/asset/png@2x/Buttons/Square-Medium/Play/Default@2x.png" id="5_7heot"]
+[ext_resource type="Texture2D" uid="uid://doeii7rujldmc" path="res://assets/menu/asset/png@2x/Buttons/Square-Medium/Levels/Hover@2x.png" id="6_8nh4g"]
+[ext_resource type="Texture2D" uid="uid://bu7cy2wv8mfw" path="res://assets/menu/asset/png@2x/Buttons/Square-Medium/Levels/Default@2x.png" id="7_duo1u"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u2gpd"]
+texture = ExtResource("2_7i2ky")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fqp0n"]
+texture = ExtResource("3_asdnh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xoeug"]
+texture = ExtResource("4_xryuc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d0eij"]
+texture = ExtResource("5_7heot")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mo1f5"]
+texture = ExtResource("6_8nh4g")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d6b2s"]
+texture = ExtResource("7_duo1u")
+
+[node name="PauseMenu" type="CanvasLayer"]
+layer = 100
+script = ExtResource("1_x7h7u")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.500772
+anchor_right = 0.537326
+anchor_bottom = 0.471451
+offset_left = -214.0
+offset_top = -104.5
+offset_right = 214.0
+offset_bottom = 104.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect3" type="ColorRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -743.5
+offset_top = -389.5
+offset_right = 721.5
+offset_bottom = 384.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.145098, 0.14902, 0.160784, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+offset_right = 1824.0
+offset_bottom = 744.0
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("2_selul")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -527.385
+offset_top = -56.6154
+offset_right = -227.385
+offset_bottom = 23.3846
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.5592, 3.57909)
+theme_override_constants/separation = 30
+
+[node name="retry" type="Button" parent="Panel/TextureRect/HBoxContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxTexture_u2gpd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_fqp0n")
+
+[node name="resume" type="Button" parent="Panel/TextureRect/HBoxContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/hover = SubResource("StyleBoxTexture_xoeug")
+theme_override_styles/normal = SubResource("StyleBoxTexture_d0eij")
+
+[node name="levelsMenu" type="Button" parent="Panel/TextureRect/HBoxContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxTexture_mo1f5")
+theme_override_styles/normal = SubResource("StyleBoxTexture_d6b2s")
+
+[node name="Label" type="Label" parent="Panel/TextureRect"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 254.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("1_jciyd")
+theme_override_font_sizes/font_size = 130
+text = "Pause"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Panel/TextureRect/HBoxContainer/retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Panel/TextureRect/HBoxContainer/resume" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="Panel/TextureRect/HBoxContainer/levelsMenu" to="." method="_on_levels_menu_pressed"]
