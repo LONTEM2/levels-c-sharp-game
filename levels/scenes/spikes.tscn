@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2rt3dylrhepr"]
+
+[ext_resource type="PackedScene" uid="uid://bkdkip5v21yx6" path="res://scenes/killzone.tscn" id="1_b6brl"]
+[ext_resource type="Texture2D" uid="uid://cekcua1xwfemn" path="res://assets/Spikes/Enlarged/4 Conjoined Spikes.png" id="2_su7v7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fl1bl"]
+size = Vector2(28, 10)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_1llqj"]
+points = PackedVector2Array(9, 9, -1, 9, 0, 0)
+
+[node name="Killzone" instance=ExtResource("1_b6brl")]
+
+[node name="4ConjoinedSpikes" type="Sprite2D" parent="." index="1"]
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("2_su7v7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+shape = SubResource("RectangleShape2D_fl1bl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="3"]
+position = Vector2(14, -4)
+shape = SubResource("ConvexPolygonShape2D_1llqj")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." index="4"]
+position = Vector2(-22, 5)
+rotation = 4.60233
+shape = SubResource("ConvexPolygonShape2D_1llqj")

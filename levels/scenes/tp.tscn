@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://drluwajs0b3du"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_26jgv"]
+script/source = "using Godot;
+using System;
+
+public partial class Tp : Area2D
+{
+
+	public override void _Ready()
+	{
+	}
+
+	public void _on_body_entered_tp(Node2D body)
+	{
+		GD.Print(\"TP!\");	
+	}
+}
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ik7a"]
+size = Vector2(16, 16)
+
+[node name="tp" type="Area2D"]
+script = SubResource("CSharpScript_26jgv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 4
+visibility_layer = 4
+shape = SubResource("RectangleShape2D_7ik7a")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered_tp"]
