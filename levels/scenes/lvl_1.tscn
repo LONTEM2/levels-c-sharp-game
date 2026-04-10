@@ -1922,29 +1922,58 @@ _data = {
 
 [node name="lvl1" type="Node2D"]
 
-[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("scoreLabel")]
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("scoreLabel", "timeLabel") groups=["game_manager"]]
 unique_name_in_owner = true
 script = ExtResource("1_24e3h")
 scoreLabel = NodePath("CanvasLayer/ScoreLabel")
+timeLabel = NodePath("CanvasLayer/TimeLabel")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="GameManager"]
 
+[node name="Panel" type="Panel" parent="GameManager/CanvasLayer"]
+offset_left = 1025.0
+offset_right = 1151.0
+offset_bottom = 40.0
+
 [node name="ScoreLabel" type="Label" parent="GameManager/CanvasLayer"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -327.0
-offset_top = 4.0
-offset_right = -5.0
-offset_bottom = 238.0
-grow_horizontal = 0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 449.0
+offset_top = -319.0
+offset_right = 573.0
+offset_bottom = -288.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 10
 size_flags_vertical = 2
 theme_override_fonts/font = ExtResource("5_atv6w")
-theme_override_font_sizes/font_size = 30
-text = "0 Coins."
-horizontal_alignment = 2
+theme_override_font_sizes/font_size = 25
+text = "🟡 0"
+horizontal_alignment = 1
 autowrap_mode = 3
+
+[node name="Panel2" type="Panel" parent="GameManager/CanvasLayer"]
+offset_left = 1025.0
+offset_top = 43.0
+offset_right = 1152.0
+offset_bottom = 83.0
+
+[node name="TimeLabel" type="Label" parent="GameManager/CanvasLayer"]
+offset_left = 1025.0
+offset_top = 44.0
+offset_right = 1152.0
+offset_bottom = 82.0
+theme_override_fonts/font = ExtResource("5_atv6w")
+theme_override_font_sizes/font_size = 25
+text = "⌛ 00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="GameManager/CanvasLayer"]
+autostart = true
 
 [node name="Map" type="TileMapLayer" parent="."]
 position = Vector2(-3, -9)
@@ -1973,19 +2002,23 @@ position = Vector2(-5, 78)
 position = Vector2(0, 23)
 shape = SubResource("WorldBoundaryShape2D_87cls")
 
-[node name="Coins" type="Node" parent="."]
+[node name="coins" type="Node" parent="."]
 
-[node name="Coin" parent="Coins" instance=ExtResource("4_3fhtp")]
+[node name="Coin" parent="coins" instance=ExtResource("4_3fhtp")]
 position = Vector2(209, 31)
+CoinId = 1
 
-[node name="Coin2" parent="Coins" instance=ExtResource("4_3fhtp")]
+[node name="Coin2" parent="coins" instance=ExtResource("4_3fhtp")]
 position = Vector2(196, -65)
+CoinId = 2
 
-[node name="Coin3" parent="Coins" instance=ExtResource("4_3fhtp")]
+[node name="Coin3" parent="coins" instance=ExtResource("4_3fhtp")]
 position = Vector2(423, -17)
+CoinId = 3
 
-[node name="Coin4" parent="Coins" instance=ExtResource("4_3fhtp")]
+[node name="Coin4" parent="coins" instance=ExtResource("4_3fhtp")]
 position = Vector2(1221, -15)
+CoinId = 4
 
 [node name="Platforms" type="Node" parent="."]
 
@@ -1994,6 +2027,7 @@ position = Vector2(0, -38)
 
 [node name="Coin" parent="Platforms/Platform" instance=ExtResource("4_3fhtp")]
 position = Vector2(0, -10.87)
+CoinId = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform"]
 libraries = {

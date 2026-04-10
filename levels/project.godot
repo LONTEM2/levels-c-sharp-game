@@ -10,22 +10,30 @@ config_version=5
 
 [application]
 
-config/name="levels"
-run/main_scene="res://scenes/lvl_2.tscn"
+config/name="levels v0.5.1 Alpha"
+run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://icon.png"
 
 [autoload]
 
 ProgressManager="*res://scripts/ProgressManager.cs"
+GlobalPause="*res://scenes/GlobalPause.tscn"
+MusicPlayer="*res://scenes/MusicPlayer.tscn"
+StatsManager="*res://scenes/StatsManager.tscn"
 
 [display]
 
-window/size/resizable=false
+window/stretch/mode="canvas_items"
 
 [dotnet]
 
 project/assembly_name="levels"
+
+[global_group]
+
+game_manager=""
+slimes=""
 
 [input]
 

@@ -1,22 +1,37 @@
-[gd_scene load_steps=8 format=3 uid="uid://cl102ldlabhrv"]
+[gd_scene load_steps=16 format=3 uid="uid://cl102ldlabhrv"]
 
 [ext_resource type="Script" path="res://scripts/MainMenu.cs" id="1_glbx2"]
-[ext_resource type="Texture2D" uid="uid://bow5c62hkd5qf" path="res://assets/background.png" id="2_5in4l"]
-[ext_resource type="FontFile" uid="uid://cmq3cp8gtx7g" path="res://assets/Font/Planes_ValMore.ttf" id="3_66gm4"]
+[ext_resource type="FontFile" uid="uid://cdjehypwgqef7" path="res://assets/menu/fonts/JosefinSans-Bold.ttf" id="2_a8yfm"]
+[ext_resource type="Texture2D" uid="uid://b3711o7gg5x36" path="res://assets/menu/asset/png@2x/Level/Button/Locked/Default@2x.png" id="3_ib4dn"]
+[ext_resource type="Texture2D" uid="uid://ifxnt7gdo4ir" path="res://assets/menu/asset/png@2x/Level/Button/Unlocked/Hover@2x.png" id="3_t2vrc"]
+[ext_resource type="Texture2D" uid="uid://cjd2i0gqsxoxb" path="res://assets/menu/asset/png@2x/Level/Button/Unlocked/Default@2x.png" id="4_woo67"]
+[ext_resource type="Texture2D" uid="uid://bfbgxw1gjxwtw" path="res://assets/menu/asset/png@2x/Buttons/Square-Medium/Home/Hover@2x.png" id="6_y8sfo"]
+[ext_resource type="Texture2D" uid="uid://dh7k4r6c34i0f" path="res://assets/menu/asset/png@2x/Buttons/Square-Medium/Home/Default@2x.png" id="7_mlg1a"]
+[ext_resource type="Texture2D" uid="uid://bs55l4n3emn1y" path="res://assets/menu/asset/Stats.png" id="8_m5ebj"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jgxue"]
-bg_color = Color(0, 0.286759, 0.182381, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v4s6a"]
+texture = ExtResource("3_ib4dn")
+region_rect = Rect2(3, 0, 173, 177)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wx68y"]
-bg_color = Color(0.585447, 0.916546, 0, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cdi3w"]
+texture = ExtResource("3_t2vrc")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bdj6y"]
-bg_color = Color(3.94672e-06, 0.670726, 0.36261, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mtw7c"]
+texture = ExtResource("3_t2vrc")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7l7ge"]
-bg_color = Color(1.92523e-06, 0.569886, 0.276919, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3hx4l"]
+texture = ExtResource("4_woo67")
 
-[node name="menu" type="Control" node_paths=PackedStringArray("lvl2Button")]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o51le"]
+texture = ExtResource("6_y8sfo")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pym04"]
+texture = ExtResource("7_mlg1a")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kphl8"]
+texture = ExtResource("8_m5ebj")
+
+[node name="menu" type="Control" node_paths=PackedStringArray("lvl2Button", "lvl3Button", "lvl4Button", "lvl5Button", "lvl6Button", "lvl7Button", "lvl8Button", "lvl9Button", "lvl10Button")]
 texture_repeat = 1
 layout_mode = 3
 anchors_preset = 15
@@ -26,123 +41,242 @@ offset_right = -12.4
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_glbx2")
-lvl2Button = NodePath("HBoxContainer/lvl2")
+lvl2Button = NodePath("VBoxContainer/HBoxContainer/lvl2")
+lvl3Button = NodePath("VBoxContainer/HBoxContainer/lvl3")
+lvl4Button = NodePath("VBoxContainer/HBoxContainer/lvl4")
+lvl5Button = NodePath("VBoxContainer/HBoxContainer/lvl5")
+lvl6Button = NodePath("VBoxContainer/HBoxContainer2/lvl6")
+lvl7Button = NodePath("VBoxContainer/HBoxContainer2/lvl7")
+lvl8Button = NodePath("VBoxContainer/HBoxContainer2/lvl8")
+lvl9Button = NodePath("VBoxContainer/HBoxContainer2/lvl9")
+lvl10Button = NodePath("VBoxContainer/HBoxContainer2/lvl10")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 2752.0
-offset_bottom = 1536.0
-scale = Vector2(0.425, 0.425)
-texture = ExtResource("2_5in4l")
+offset_right = 1150.0
+offset_bottom = 648.0
+color = Color(0.156863, 0.176471, 0.211765, 1)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 357.0
-offset_top = 357.0
-offset_right = 815.255
-offset_bottom = 397.0
-scale = Vector2(0.975, 0.975)
-theme_override_constants/separation = 5
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -133.0
+offset_top = -52.0
+offset_right = 133.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
 
-[node name="lvl1" type="Button" parent="HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_66gm4")
-theme_override_font_sizes/font_size = 14
-theme_override_styles/disabled = SubResource("StyleBoxFlat_jgxue")
-theme_override_styles/hover = SubResource("StyleBoxFlat_wx68y")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bdj6y")
-theme_override_styles/normal = SubResource("StyleBoxFlat_7l7ge")
-text = "Lvl 1 "
 
-[node name="lvl2" type="Button" parent="HBoxContainer"]
+[node name="lvl1" type="Button" parent="VBoxContainer/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(50, 30)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_66gm4")
-theme_override_font_sizes/font_size = 14
-theme_override_styles/disabled = SubResource("StyleBoxFlat_jgxue")
-theme_override_styles/hover = SubResource("StyleBoxFlat_wx68y")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bdj6y")
-theme_override_styles/normal = SubResource("StyleBoxFlat_7l7ge")
-text = "Lvl 2 "
+theme_override_colors/font_hover_pressed_color = Color(0.952941, 0.141176, 0.337255, 1)
+theme_override_colors/font_hover_color = Color(0.952941, 0.141176, 0.337255, 1)
+theme_override_fonts/font = ExtResource("2_a8yfm")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxTexture_v4s6a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cdi3w")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mtw7c")
+theme_override_styles/normal = SubResource("StyleBoxTexture_3hx4l")
+text = "1"
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
 
-[node name="lvl3" type="Button" parent="HBoxContainer"]
+[node name="lvl2" type="Button" parent="VBoxContainer/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(50, 30)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_66gm4")
-theme_override_font_sizes/font_size = 14
-theme_override_styles/disabled = SubResource("StyleBoxFlat_jgxue")
-theme_override_styles/hover = SubResource("StyleBoxFlat_wx68y")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bdj6y")
-theme_override_styles/normal = SubResource("StyleBoxFlat_7l7ge")
-text = "c.soon"
+theme_override_colors/font_hover_pressed_color = Color(0.952941, 0.141176, 0.337255, 1)
+theme_override_colors/font_hover_color = Color(0.952941, 0.141176, 0.337255, 1)
+theme_override_fonts/font = ExtResource("2_a8yfm")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxTexture_v4s6a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cdi3w")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mtw7c")
+theme_override_styles/normal = SubResource("StyleBoxTexture_3hx4l")
+text = "2"
 
-[node name="lvl4" type="Button" parent="HBoxContainer"]
+[node name="lvl3" type="Button" parent="VBoxContainer/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(50, 30)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_66gm4")
-theme_override_font_sizes/font_size = 14
-theme_override_styles/disabled = SubResource("StyleBoxFlat_jgxue")
-theme_override_styles/hover = SubResource("StyleBoxFlat_wx68y")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bdj6y")
-theme_override_styles/normal = SubResource("StyleBoxFlat_7l7ge")
-text = "c.soon"
+theme_override_colors/font_hover_pressed_color = Color(0.952941, 0.141176, 0.337255, 1)
+theme_override_colors/font_hover_color = Color(0.952941, 0.141176, 0.337255, 1)
+theme_override_fonts/font = ExtResource("2_a8yfm")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxTexture_v4s6a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cdi3w")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mtw7c")
+theme_override_styles/normal = SubResource("StyleBoxTexture_3hx4l")
+text = "3"
 
-[node name="lvl5" type="Button" parent="HBoxContainer"]
+[node name="lvl4" type="Button" parent="VBoxContainer/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(50, 30)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_66gm4")
-theme_override_font_sizes/font_size = 14
-theme_override_styles/disabled = SubResource("StyleBoxFlat_jgxue")
-theme_override_styles/hover = SubResource("StyleBoxFlat_wx68y")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bdj6y")
-theme_override_styles/normal = SubResource("StyleBoxFlat_7l7ge")
-text = "c.soon"
+theme_override_colors/font_hover_pressed_color = Color(0.952941, 0.141176, 0.337255, 1)
+theme_override_colors/font_hover_color = Color(0.952941, 0.141176, 0.337255, 1)
+theme_override_fonts/font = ExtResource("2_a8yfm")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxTexture_v4s6a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cdi3w")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mtw7c")
+theme_override_styles/normal = SubResource("StyleBoxTexture_3hx4l")
+text = "4"
 
-[node name="lvl6" type="Button" parent="HBoxContainer"]
+[node name="lvl5" type="Button" parent="VBoxContainer/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(50, 30)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_66gm4")
-theme_override_font_sizes/font_size = 14
-theme_override_styles/disabled = SubResource("StyleBoxFlat_jgxue")
-theme_override_styles/hover = SubResource("StyleBoxFlat_wx68y")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bdj6y")
-theme_override_styles/normal = SubResource("StyleBoxFlat_7l7ge")
-text = "c.soon"
+theme_override_colors/font_hover_pressed_color = Color(0.952941, 0.141176, 0.337255, 1)
+theme_override_colors/font_hover_color = Color(0.952941, 0.141176, 0.337255, 1)
+theme_override_fonts/font = ExtResource("2_a8yfm")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxTexture_v4s6a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cdi3w")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mtw7c")
+theme_override_styles/normal = SubResource("StyleBoxTexture_3hx4l")
+text = "5"
 
-[node name="lvl7" type="Button" parent="HBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_66gm4")
-theme_override_font_sizes/font_size = 14
-theme_override_styles/disabled = SubResource("StyleBoxFlat_jgxue")
-theme_override_styles/hover = SubResource("StyleBoxFlat_wx68y")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bdj6y")
-theme_override_styles/normal = SubResource("StyleBoxFlat_7l7ge")
-text = "c.soon"
+size_flags_horizontal = 0
+size_flags_vertical = 6
+alignment = 1
 
-[node name="lvl8" type="Button" parent="HBoxContainer"]
+[node name="lvl6" type="Button" parent="VBoxContainer/HBoxContainer2"]
+clip_contents = true
+custom_minimum_size = Vector2(50, 30)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_66gm4")
-theme_override_font_sizes/font_size = 14
-theme_override_styles/disabled = SubResource("StyleBoxFlat_jgxue")
-theme_override_styles/hover = SubResource("StyleBoxFlat_wx68y")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bdj6y")
-theme_override_styles/normal = SubResource("StyleBoxFlat_7l7ge")
-text = "c.soon"
+theme_override_colors/font_hover_pressed_color = Color(0.952941, 0.141176, 0.337255, 1)
+theme_override_colors/font_hover_color = Color(0.952941, 0.141176, 0.337255, 1)
+theme_override_fonts/font = ExtResource("2_a8yfm")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxTexture_v4s6a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cdi3w")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mtw7c")
+theme_override_styles/normal = SubResource("StyleBoxTexture_3hx4l")
+text = "6"
 
-[node name="lvl9" type="Button" parent="HBoxContainer"]
+[node name="lvl7" type="Button" parent="VBoxContainer/HBoxContainer2"]
+clip_contents = true
+custom_minimum_size = Vector2(50, 30)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_66gm4")
-theme_override_font_sizes/font_size = 14
-theme_override_styles/disabled = SubResource("StyleBoxFlat_jgxue")
-theme_override_styles/hover = SubResource("StyleBoxFlat_wx68y")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bdj6y")
-theme_override_styles/normal = SubResource("StyleBoxFlat_7l7ge")
-text = "c.soon"
+theme_override_colors/font_hover_pressed_color = Color(0.952941, 0.141176, 0.337255, 1)
+theme_override_colors/font_hover_color = Color(0.952941, 0.141176, 0.337255, 1)
+theme_override_fonts/font = ExtResource("2_a8yfm")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxTexture_v4s6a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cdi3w")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mtw7c")
+theme_override_styles/normal = SubResource("StyleBoxTexture_3hx4l")
+text = "7"
 
-[node name="lvl10" type="Button" parent="HBoxContainer"]
+[node name="lvl8" type="Button" parent="VBoxContainer/HBoxContainer2"]
+clip_contents = true
+custom_minimum_size = Vector2(50, 30)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_66gm4")
-theme_override_font_sizes/font_size = 14
-theme_override_styles/disabled = SubResource("StyleBoxFlat_jgxue")
-theme_override_styles/hover = SubResource("StyleBoxFlat_wx68y")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bdj6y")
-theme_override_styles/normal = SubResource("StyleBoxFlat_7l7ge")
-text = "c.soon"
+theme_override_colors/font_hover_pressed_color = Color(0.952941, 0.141176, 0.337255, 1)
+theme_override_colors/font_hover_color = Color(0.952941, 0.141176, 0.337255, 1)
+theme_override_fonts/font = ExtResource("2_a8yfm")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxTexture_v4s6a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cdi3w")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mtw7c")
+theme_override_styles/normal = SubResource("StyleBoxTexture_3hx4l")
+text = "8"
 
-[connection signal="pressed" from="HBoxContainer/lvl1" to="." method="_on_lvl_1_pressed"]
-[connection signal="pressed" from="HBoxContainer/lvl2" to="." method="_on_lvl_2_pressed"]
+[node name="lvl9" type="Button" parent="VBoxContainer/HBoxContainer2"]
+clip_contents = true
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.952941, 0.141176, 0.337255, 1)
+theme_override_colors/font_hover_color = Color(0.952941, 0.141176, 0.337255, 1)
+theme_override_fonts/font = ExtResource("2_a8yfm")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxTexture_v4s6a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cdi3w")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mtw7c")
+theme_override_styles/normal = SubResource("StyleBoxTexture_3hx4l")
+text = "9"
+
+[node name="lvl10" type="Button" parent="VBoxContainer/HBoxContainer2"]
+clip_contents = true
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.952941, 0.141176, 0.337255, 1)
+theme_override_colors/font_hover_color = Color(0.952941, 0.141176, 0.337255, 1)
+theme_override_fonts/font = ExtResource("2_a8yfm")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxTexture_v4s6a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cdi3w")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mtw7c")
+theme_override_styles/normal = SubResource("StyleBoxTexture_3hx4l")
+text = "10"
+
+[node name="HomeButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -80.0
+offset_right = 80.0
+grow_vertical = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_o51le")
+theme_override_styles/normal = SubResource("StyleBoxTexture_pym04")
+
+[node name="StatsButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -70.36
+offset_top = -80.0
+offset_right = 4.64001
+offset_bottom = -5.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_kphl8")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_kphl8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kphl8")
+theme_override_styles/normal = SubResource("StyleBoxTexture_kphl8")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 116.0
+offset_bottom = 167.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_a8yfm")
+theme_override_font_sizes/font_size = 50
+text = "LEVELS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/lvl1" to="." method="_on_lvl_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/lvl2" to="." method="_on_lvl_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/lvl3" to="." method="_on_lvl_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/lvl4" to="." method="_on_lvl_4_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/lvl5" to="." method="_on_lvl_5_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/lvl6" to="." method="_on_lvl_6_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/lvl7" to="." method="_on_lvl_7_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/lvl8" to="." method="_on_lvl_8_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/lvl9" to="." method="_on_lvl_9_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/lvl10" to="." method="_on_lvl_10_pressed"]
+[connection signal="pressed" from="HomeButton" to="." method="_on_home_button_pressed"]
+[connection signal="pressed" from="StatsButton" to="." method="_on_stats_button_pressed"]

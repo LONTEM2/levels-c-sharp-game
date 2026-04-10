@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://cokc0t4nugvkd"]
+
+[ext_resource type="Script" path="res://scripts/GameManager.cs" id="1_q1ss3"]
+[ext_resource type="FontFile" uid="uid://cmq3cp8gtx7g" path="res://assets/Font/Planes_ValMore.ttf" id="2_ky0lw"]
+[ext_resource type="Shader" path="res://scenes/lvl_7.gdshader" id="3_wr7ww"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1m0k1"]
+shader = ExtResource("3_wr7ww")
+
+[node name="lvl_10" type="Node2D"]
+
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("scoreLabel", "timeLabel")]
+unique_name_in_owner = true
+script = ExtResource("1_q1ss3")
+scoreLabel = NodePath("CanvasLayer/ScoreLabel")
+timeLabel = NodePath("CanvasLayer/TimeLabel")
+currentLevelNum = 10
+timeLimit = 300.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="GameManager"]
+
+[node name="Panel" type="Panel" parent="GameManager/CanvasLayer"]
+offset_left = 1025.0
+offset_right = 1151.0
+offset_bottom = 40.0
+
+[node name="ScoreLabel" type="Label" parent="GameManager/CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 449.0
+offset_top = -319.5
+offset_right = 575.0
+offset_bottom = -288.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 10
+size_flags_vertical = 2
+theme_override_fonts/font = ExtResource("2_ky0lw")
+theme_override_font_sizes/font_size = 25
+text = "🟡 0"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Panel2" type="Panel" parent="GameManager/CanvasLayer"]
+offset_left = 1025.0
+offset_top = 43.0
+offset_right = 1152.0
+offset_bottom = 83.0
+
+[node name="TimeLabel" type="Label" parent="GameManager/CanvasLayer"]
+offset_left = 1025.0
+offset_top = 44.0
+offset_right = 1152.0
+offset_bottom = 82.0
+theme_override_fonts/font = ExtResource("2_ky0lw")
+theme_override_font_sizes/font_size = 25
+text = "⌛ 00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="GameManager/CanvasLayer"]
+autostart = true
+
+[node name="InvertEffect" type="ColorRect" parent="GameManager/CanvasLayer"]
+visible = false
+material = SubResource("ShaderMaterial_1m0k1")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -766.0
+offset_top = -675.0
+offset_right = 811.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2

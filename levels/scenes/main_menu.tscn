@@ -1,0 +1,152 @@
+[gd_scene load_steps=23 format=3 uid="uid://b3uh1ca23li5d"]
+
+[ext_resource type="Script" path="res://scripts/PlayMenu.cs" id="1_a7d2r"]
+[ext_resource type="FontFile" uid="uid://cdjehypwgqef7" path="res://assets/menu/fonts/JosefinSans-Bold.ttf" id="2_rca0t"]
+[ext_resource type="Texture2D" uid="uid://hfntd0xuvmx" path="res://assets/menu/asset/png@2x/Buttons/Rect-Medium/PlayText/Hover@2x.png" id="3_gqst5"]
+[ext_resource type="Texture2D" uid="uid://b6b551wkmkfc7" path="res://assets/menu/asset/png@2x/Buttons/Rect-Medium/PlayText/Default@2x.png" id="4_ixm08"]
+[ext_resource type="Texture2D" uid="uid://cl8da163xh1fa" path="res://assets/menu/asset/png@2x/Level/Button/Locked/Hover@2x.png" id="6_dsbtm"]
+[ext_resource type="Script" path="res://scripts/MyPlayButton.cs" id="6_gggd6"]
+[ext_resource type="Texture2D" uid="uid://dgp71oeeiaike" path="res://assets/menu/asset/png@2x/Buttons/Square-Medium/Repeat/Hover@2x.png" id="7_j4xvg"]
+[ext_resource type="Texture2D" uid="uid://d26gfveny2hc2" path="res://assets/menu/asset/png@2x/Buttons/Square-Medium/Repeat/Default@2x.png" id="8_oqpbu"]
+[ext_resource type="Texture2D" uid="uid://0e1h1ehrk4py" path="res://assets/menu/asset/png@2x/Buttons/Square-Medium/SoundOn/Hover@2x.png" id="9_nbwy5"]
+[ext_resource type="Texture2D" uid="uid://240kdt34aici" path="res://assets/menu/asset/png@2x/Buttons/Square-Medium/SoundOn/Default@2x.png" id="10_y3yg6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hxj2s"]
+texture = ExtResource("3_gqst5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t34rp"]
+texture = ExtResource("3_gqst5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yg0r7"]
+texture = ExtResource("3_gqst5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1rse1"]
+texture = ExtResource("4_ixm08")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eni4r"]
+texture = ExtResource("6_dsbtm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a1jgp"]
+texture = ExtResource("7_j4xvg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w3pf0"]
+texture = ExtResource("7_j4xvg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u0bbg"]
+texture = ExtResource("8_oqpbu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5rac1"]
+texture = ExtResource("9_nbwy5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2v63r"]
+texture = ExtResource("9_nbwy5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q1a1b"]
+texture = ExtResource("9_nbwy5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wg4wd"]
+texture = ExtResource("10_y3yg6")
+
+[node name="PlayMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a7d2r")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1163.0
+offset_bottom = 648.0
+color = Color(0.156863, 0.176471, 0.211765, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 116.0
+offset_bottom = 167.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_rca0t")
+theme_override_font_sizes/font_size = 50
+text = "LEVELS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -26.0
+offset_right = 40.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_hxj2s")
+theme_override_styles/hover = SubResource("StyleBoxTexture_t34rp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yg0r7")
+theme_override_styles/normal = SubResource("StyleBoxTexture_1rse1")
+script = ExtResource("6_gggd6")
+
+[node name="Settings" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(60, 100)
+layout_mode = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("2_rca0t")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_eni4r")
+theme_override_styles/hover = SubResource("StyleBoxTexture_a1jgp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_w3pf0")
+theme_override_styles/normal = SubResource("StyleBoxTexture_u0bbg")
+text = "
+"
+
+[node name="ConfirmResetDialog" type="ConfirmationDialog" parent="."]
+size = Vector2i(675, 100)
+ok_button_text = "Yes, delete"
+dialog_text = "Are you sure you want to delete all game progress? This operation cannot be undone."
+
+[node name="Version" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_rca0t")
+theme_override_font_sizes/font_size = 25
+text = "v0.5.1 Alpha"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sound" type="Button" parent="."]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -8.0
+offset_right = 8.0
+grow_vertical = 0
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_5rac1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2v63r")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_q1a1b")
+theme_override_styles/normal = SubResource("StyleBoxTexture_wg4wd")
+
+[connection signal="mouse_entered" from="VBoxContainer/Play" to="." method="OnMouseEntered"]
+[connection signal="mouse_exited" from="VBoxContainer/Play" to="." method="OnMouseExited"]
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Sound" to="." method="_on_sound_pressed"]
