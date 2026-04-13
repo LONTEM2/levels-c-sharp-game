@@ -43,10 +43,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hc5op"]
 size = Vector2(10, 13)
 
-[node name="Slime" type="Node2D"]
+[node name="Slime" type="Node2D" groups=["slimes"]]
 script = ExtResource("1_neixf")
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ucps3")
 autoplay = "default"
 

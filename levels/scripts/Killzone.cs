@@ -3,19 +3,55 @@ using System;
 
 public partial class Killzone : Area2D
 {
-	private Timer _timer;
+	private bool _isDead = false;
 
-	public override void _Ready()
+	public void _on_body_entered_kz(Node2D body)
 	{
-		_timer = GetNode<Timer>("Timer");
+		// Jeśli już trwa proces śmierci, ignoruj kolejne kolizje
+		if (_isDead) return;
+
+		// Sprawdzamy czy to gracz (używamy IsInGroup dla pewności)
+		if (body is Player || body.IsInGroup("player") || body.IsInGroup("Player"))
+		{
+			_isDead = true;
+			GD.Print("Gracz zginął!");
+
+			// 1. Pobieramy managery
+			var musicPlayer = GetNodeOrNull<MusicPlayer>("/root/MusicPlayer");
+			var stats = GetNodeOrNull<StatsManager>("/root/StatsManager");
+			var gm = GetTree().CurrentScene.GetNodeOrNull<GameManager>("GameManager");
+
+			// 2. Dźwięk śmierci
+			musicPlayer?.PlaySfx("res://audio/sfx/Die.wav");
+
+			// 3. Statystyki: Rozpoznawanie typu śmierci
+			if (stats != null && gm != null)
+			{
+				string deathType = "jump"; // Domyślnie skok w przepaść
+
+				// Sprawdzamy, czy Killzone jest częścią Slime'a na podstawie skryptu lub grupy
+				if (GetParent() is Slime || GetParent().IsInGroup("slimes")) 
+				{
+					deathType = "slime";
+				}
+
+				// TYLKO JEDNO WYWOŁANIE (naprawione powtórzenie)
+				stats.AddDeath(gm.currentLevelNum, deathType);
+			}
+
+			// 4. Bezpieczny restart sceny
+			CallDeferred(MethodName.RestartLevel);
+		}
 	}
 
-	public void _on_body_entered(Node2D body)
+	private void RestartLevel()
 	{
-		GD.Print("You Died!");	
-		Engine.TimeScale = 0.5;
-		_timer.Start();
-		Engine.TimeScale = 1;
+		Engine.TimeScale = 1.0f;
+		
+		var musicPlayer = GetNodeOrNull<MusicPlayer>("/root/MusicPlayer");
+		musicPlayer?.ForceReset();
+
+		// Reload sceny zresetuje flagę _isDead automatycznie
 		GetTree().ReloadCurrentScene();
 	}
 }

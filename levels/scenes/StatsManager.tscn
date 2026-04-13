@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://dikskkxri7unk"]
+
+[ext_resource type="Script" path="res://scripts/StatsManager.cs" id="1_oyj0k"]
+
+[node name="StatsManager" type="CanvasLayer"]
+layer = 5
+script = ExtResource("1_oyj0k")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StatsLabel" type="Label" parent="Control"]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 23.0
